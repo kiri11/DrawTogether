@@ -1,0 +1,36 @@
+﻿<Window x:Name="MainWindow1" x:Class="DrawTogether.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Background="{x:Null}" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" WindowState="Maximized"  WindowStyle="None">
+    <Grid ScrollViewer.VerticalScrollBarVisibility="Disabled">
+    	<Grid.RowDefinitions>
+    		<RowDefinition/>
+    		<RowDefinition/>
+    	</Grid.RowDefinitions>
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition/>
+    		<ColumnDefinition/>
+    	</Grid.ColumnDefinitions>
+    	<InkCanvas VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="#FFFFDADA" Grid.Column="0" Grid.Row="0">
+    		<InkCanvas.DefaultDrawingAttributes>
+    			<DrawingAttributes Color="#FFFB2727" FitToCurve="True" Height="5" IgnorePressure="False" IsHighlighter="False" StylusTip="Ellipse" StylusTipTransform="Identity" Width="5"/>
+    		</InkCanvas.DefaultDrawingAttributes>
+    	</InkCanvas>
+    	<InkCanvas VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="#FFFFF1CB" Grid.Column="0" Grid.Row="1">
+    		<InkCanvas.DefaultDrawingAttributes>
+    			<DrawingAttributes Color="#FF997000" FitToCurve="True" Height="5" IgnorePressure="False" StylusTip="Ellipse" StylusTipTransform="Identity" Width="5"/>
+    		</InkCanvas.DefaultDrawingAttributes>
+    	</InkCanvas>
+    	<InkCanvas VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="#FFA2C3FD" Grid.Column="1" Grid.Row="0">
+    		<InkCanvas.DefaultDrawingAttributes>
+    			<DrawingAttributes Color="#FF0051FF" Height="5" IgnorePressure="False" StylusTip="Ellipse" StylusTipTransform="Identity" Width="5" FitToCurve="True"/>
+    		</InkCanvas.DefaultDrawingAttributes>
+    	</InkCanvas>
+    	<InkCanvas VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="#FFB5FFC6" Grid.Column="1" Grid.Row="1">
+    		<InkCanvas.DefaultDrawingAttributes>
+    			<DrawingAttributes Color="#FF22C347" FitToCurve="True" Height="5" IgnorePressure="False" IsHighlighter="False" StylusTip="Ellipse" StylusTipTransform="Identity" Width="5"/>
+    		</InkCanvas.DefaultDrawingAttributes>
+    	</InkCanvas>
+        
+    </Grid>
+</Window>
