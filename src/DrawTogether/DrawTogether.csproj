@@ -73,9 +73,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\GameType.cs" />
     <Compile Include="Model\UserInteractionService.cs" />
+    <Compile Include="ViewModel\GamePageViewModel.cs" />
     <Compile Include="ViewModel\InteractionWindowViewModel.cs" />
+    <Compile Include="ViewModel\LevelsPageViewModel.cs" />
     <Compile Include="ViewModel\PlayersPageViewModel.cs" />
+    <Compile Include="ViewModel\BoxesPageViewModel.cs" />
     <Compile Include="ViewModel\StartPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -126,11 +130,23 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="View\GamePageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\InteractionWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\LevelsPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\PlayersPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BoxesPageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
