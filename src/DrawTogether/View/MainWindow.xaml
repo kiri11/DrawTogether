@@ -1,9 +1,0 @@
-﻿<Window x:Class="DrawTogether.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="622.72" Width="1068.725">
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Height="100"  Click="OpenGameWindow"/>
-
-    </Grid>
-</Window>
