@@ -17,7 +17,6 @@ namespace DrawTogether.ViewModel
         {
             _userInteractionService = userInteractionService;
             InitializeComponent();
-
         }
 
         private void OnTwoPlayersButtonClick(object sender, RoutedEventArgs e)

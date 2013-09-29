@@ -14,13 +14,10 @@ namespace DrawTogether.ViewModel
 
         public InteractionWindowViewModel()
         {
+            _userInteractionService = new UserInteractionService(this);
             InitializeComponent();
 
-            _userInteractionService = new UserInteractionService(this);
             _userInteractionService.SwitchToStartWindow();
-
-            //this.Content = new StartPageViewModel();
-
         }
     }
 }

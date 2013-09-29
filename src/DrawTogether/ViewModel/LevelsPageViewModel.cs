@@ -16,7 +16,6 @@ using System.Windows.Shapes;
 
 namespace DrawTogether.ViewModel
 {
-
     public partial class LevelsPageViewModel : Page
     {
         private UserInteractionService _userInteractionService;
@@ -28,11 +27,14 @@ namespace DrawTogether.ViewModel
             _userInteractionService = userInteractionService;
             _playersCount = playersCount;
             _boxId = boxId;
+
             InitializeComponent();
         }
-        private void OnLevelClick(object sender, RoutedEventArgs e)
+
+        private void OnLevelItemClick(object sender, RoutedEventArgs e)
         {
             int levelId = 0;
+
             _userInteractionService.SwitchToGameWindow(_playersCount, _boxId, levelId);
         }
     }

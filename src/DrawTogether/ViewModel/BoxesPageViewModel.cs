@@ -22,7 +22,7 @@ namespace DrawTogether.ViewModel
 
         }
 
-        private void OnBoxClick(object sender, RoutedEventArgs e)
+        private void OnBoxItemClick(object sender, RoutedEventArgs e)
         {
             int boxId = 0;
 
