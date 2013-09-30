@@ -73,7 +73,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\BoxItem.cs" />
     <Compile Include="Model\GameType.cs" />
+    <Compile Include="Model\IMenuItem.cs" />
+    <Compile Include="Model\LevelItem.cs" />
+    <Compile Include="Model\GameFactory.cs" />
     <Compile Include="Model\UserInteractionService.cs" />
     <Compile Include="ViewModel\GamePageViewModel.cs" />
     <Compile Include="ViewModel\InteractionWindowViewModel.cs" />
