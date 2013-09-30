@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Drawing;
 
 namespace DrawTogether.ViewModel
 {
@@ -25,6 +26,13 @@ namespace DrawTogether.ViewModel
             InitializeComponent();
 
             _userInteractionService.SwitchToStartPage();
+
+            
+
+            double[] asd1 = { 1, 4, 1, 1, 1};
+            double[] asd2 = { 1, 1, 1 , 1, 3};
+            var asd = Correlation.Correlate(asd1, asd2);
+
         }
     }
 }

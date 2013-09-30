@@ -56,6 +56,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Printing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,6 +83,8 @@
     </Compile>
     <Compile Include="AppSettings.cs" />
     <Compile Include="Extensions\MySerializer.cs" />
+    <Compile Include="Model\BitmapCompare.cs" />
+    <Compile Include="Model\Correlation.cs" />
     <Compile Include="Model\MenuBoxItem.cs" />
     <Compile Include="Model\IMenuItem.cs" />
     <Compile Include="Model\MenuLevelItem.cs" />
