@@ -9,9 +9,9 @@ namespace DrawTogether.Model
 {
     public interface IMenuItem
     {
-        public string Title { get; set; }
-        public BitmapImage ImageSource { get; set; }
-        public int Id { get; set; }
-        public GameType GameType { get; set; }
+        string Title { get; set; }
+        BitmapImage ImageSource { get; set; }
+        int Id { get; set; }
+        GameMode GameMode { get; set; }
     }
 }

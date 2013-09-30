@@ -12,12 +12,12 @@ namespace DrawTogether.ViewModel
     public partial class BoxesPageViewModel : Page
     {
         private UserInteractionService _userInteractionService;
-        private GameType _gameType;
+        private GameMode _gameMode;
 
-        public BoxesPageViewModel(UserInteractionService userInteractionService, GameType gameType)
+        public BoxesPageViewModel(UserInteractionService userInteractionService, GameMode gameMode)
         {
             _userInteractionService = userInteractionService;
-            _gameType = gameType;
+            _gameMode = gameMode;
             InitializeComponent();
 
         }
@@ -26,7 +26,7 @@ namespace DrawTogether.ViewModel
         {
             int boxId = 0;
 
-            _userInteractionService.SwitchToLevelsWindow(_gameType, boxId);
+            _userInteractionService.SwitchToLevelsWindow(_gameMode, boxId);
         }
 
         private void OnBackButtonClick(object sender, RoutedEventArgs e)

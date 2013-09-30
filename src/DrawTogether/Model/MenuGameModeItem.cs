@@ -6,5 +6,9 @@ using System.Threading.Tasks;
 
 namespace DrawTogether.Model
 {
-     public enum GameType { TwoPlayers, ThreePlayers, FourPlayers }
+    public class MenuGameModeItem
+    {
+        public GameMode GameMode { get; set; }
+        public MenuBoxItem[] BoxItems { get; set; }
+    }
 }

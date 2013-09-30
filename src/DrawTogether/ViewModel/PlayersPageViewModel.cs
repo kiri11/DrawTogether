@@ -21,17 +21,17 @@ namespace DrawTogether.ViewModel
 
         private void OnTwoPlayersButtonClick(object sender, RoutedEventArgs e)
         {
-            _userInteractionService.SwitchToBoxesWindow(GameType.TwoPlayers);
+            _userInteractionService.SwitchToBoxesWindow(GameMode.TwoPlayers);
         }
 
         private void OnThreePlayersButtonClick(object sender, RoutedEventArgs e)
         {
-            _userInteractionService.SwitchToBoxesWindow(GameType.ThreePlayers);
+            _userInteractionService.SwitchToBoxesWindow(GameMode.ThreePlayers);
         }
 
         private void OnFourPlayersButtonClick(object sender, RoutedEventArgs e)
         {
-            _userInteractionService.SwitchToBoxesWindow(GameType.FourPlayers);
+            _userInteractionService.SwitchToBoxesWindow(GameMode.FourPlayers);
         }
 
         private void OnBackButtonClick(object sender, RoutedEventArgs e)

@@ -26,19 +26,19 @@ namespace DrawTogether.Model
             _parentWindow.Content = new PlayersPageViewModel(this);
         }
 
-        public void SwitchToBoxesWindow(GameType gameType)
+        public void SwitchToBoxesWindow(GameMode gameMode)
         {
-            _parentWindow.Content = new BoxesPageViewModel(this, gameType);
+            _parentWindow.Content = new BoxesPageViewModel(this, gameMode);
         }
 
-        public void SwitchToLevelsWindow(GameType gameType, int boxId)
+        public void SwitchToLevelsWindow(GameMode gameMode, int boxId)
         {
-            _parentWindow.Content = new LevelsPageViewModel(this, gameType, boxId);
+            _parentWindow.Content = new LevelsPageViewModel(this, gameMode, boxId);
         }
 
-        public void SwitchToGameWindow(GameType GameType, int boxId, int levelId)
+        public void SwitchToGameWindow(GameMode GameMode, int boxId, int levelId)
         {
-            _parentWindow.Content = new GamePageViewModel(this, GameType, boxId, levelId);            
+            _parentWindow.Content = new GamePageViewModel(this, GameMode, boxId, levelId);            
         }
 
         public void ShowPauseDialog()

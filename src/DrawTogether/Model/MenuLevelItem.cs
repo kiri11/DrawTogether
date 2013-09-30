@@ -7,14 +7,12 @@ using System.Windows.Media.Imaging;
 
 namespace DrawTogether.Model
 {
-    public class BoxItem : IMenuItem
+    public class MenuLevelItem : IMenuItem
     {
         private string _title;
         private BitmapImage _imageSource;
         private int _id;
-        private GameType _gameType;
-
-        public LevelItem[] LevelItems { get; set; }
+        private GameMode _gameMode;
 
         public string Title
         {
@@ -39,7 +37,7 @@ namespace DrawTogether.Model
                 _imageSource = value;
             }
         }
-        
+
         public int Id
         {
             get
@@ -52,15 +50,15 @@ namespace DrawTogether.Model
             }
         }
 
-        public GameType GameType
+        public GameMode GameMode
         {
             get
             {
-                return _gameType;
+                return _gameMode;
             }
             set
             {
-                _gameType = value;
+                _gameMode = value;
             }
         }
     }

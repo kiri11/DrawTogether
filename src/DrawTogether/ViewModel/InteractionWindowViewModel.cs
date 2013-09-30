@@ -18,6 +18,8 @@ namespace DrawTogether.ViewModel
             InitializeComponent();
 
             _userInteractionService.SwitchToStartWindow();
+
+            var asd = new MenuItemsProvider().GetMenuGameModeItems();
         }
     }
 }
