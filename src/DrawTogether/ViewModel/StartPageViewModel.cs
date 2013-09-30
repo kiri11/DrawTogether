@@ -21,7 +21,7 @@ namespace DrawTogether.ViewModel
 
         private void OnStartButtonClick(object sender, RoutedEventArgs e)
         {
-            _userInteractionService.SwitchToPlayersWindow();
+            _userInteractionService.SwitchToGameModesPage();
         }
 
         private void OnExitButtonClick(object sender, RoutedEventArgs e)

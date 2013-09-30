@@ -20,13 +20,13 @@ namespace DrawTogether.ViewModel
     {
 
         private UserInteractionService _userInteractionService;
-        private GameMode _gameMode;
+        private int _gameModeId;
         private int _boxId;
         private int _levelId;
 
-        public GamePageViewModel(UserInteractionService userInteractionService, GameMode gameMode, int boxId, int levelId)
+        public GamePageViewModel(UserInteractionService userInteractionService, int gameModeId, int boxId, int levelId)
         {
-            _gameMode = gameMode;
+            _gameModeId = gameModeId;
             _boxId = boxId;
             _levelId = levelId;
 

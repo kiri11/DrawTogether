@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace DrawTogether.Model
@@ -10,9 +11,9 @@ namespace DrawTogether.Model
     public class MenuLevelItem : IMenuItem
     {
         private string _title;
-        private BitmapImage _imageSource;
+        private ImageBrush _imageBrush;
         private int _id;
-        private GameMode _gameMode;
+        private int _gameModeId;
 
         public string Title
         {
@@ -23,18 +24,6 @@ namespace DrawTogether.Model
             set
             {
                 _title = value;
-            }
-        }
-
-        public BitmapImage ImageSource
-        {
-            get
-            {
-                return _imageSource;
-            }
-            set
-            {
-                _imageSource = value;
             }
         }
 
@@ -50,15 +39,28 @@ namespace DrawTogether.Model
             }
         }
 
-        public GameMode GameMode
+        public int GameModeId
         {
             get
             {
-                return _gameMode;
+                return _gameModeId;
             }
             set
             {
-                _gameMode = value;
+                _gameModeId = value;
+            }
+        }
+
+
+        public ImageBrush ImageBrush
+        {
+            get
+            {
+                return _imageBrush;
+            }
+            set
+            {
+                _imageBrush = value;
             }
         }
     }

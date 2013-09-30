@@ -11,15 +11,20 @@ namespace DrawTogether.ViewModel
     public partial class InteractionWindowViewModel : Window
     {
         private UserInteractionService _userInteractionService;
+        private MenuGameModeItem[] _gameModeItems;
 
         public InteractionWindowViewModel()
         {
-            _userInteractionService = new UserInteractionService(this);
+            //ниже перенести на экран загрузки!
+
+            _gameModeItems = new MenuItemsProvider().GetMenuGameModeItems();
+
+            _userInteractionService = new UserInteractionService(this, _gameModeItems);
+            _gameModeItems = new MenuItemsProvider().GetMenuGameModeItems();
+
             InitializeComponent();
 
-            _userInteractionService.SwitchToStartWindow();
-
-            var asd = new MenuItemsProvider().GetMenuGameModeItems();
+            _userInteractionService.SwitchToStartPage();
         }
     }
 }

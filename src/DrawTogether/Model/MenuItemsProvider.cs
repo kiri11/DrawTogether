@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Xml.Serialization;
+using DrawTogether.Extensions;
 
 namespace DrawTogether.Model
 {
@@ -22,31 +24,65 @@ namespace DrawTogether.Model
             for (int i = 0; i < items.Count(); i++)
             {
                 items[i] = new MenuGameModeItem();
-                string modeId = modeDirs[i].Split('_')[1];
+                items[i].Id = int.Parse(modeDirs[i].Split('_').LastOrDefault());
+                items[i].GameModeId = items[i].Id;
 
-                if (modeId == "4x")
+                if (items[i].Id == 0)
                 {
-                    items[i].GameMode = GameMode.FourPlayers;
-                    items[i].BoxItems = GetMenuBoxItems(GameMode.FourPlayers);
+                    items[i].Title = "4 игрока"; //Переопределить под локализацию
+                    items[i].BoxItems = GetMenuBoxItems(items[i].Id, modeDirs[i]);
                 }
-                if (modeId == "3x")
+                if (items[i].Id == 1)
                 {
-                    items[i].GameMode = GameMode.ThreePlayers;
-                    items[i].BoxItems = GetMenuBoxItems(GameMode.ThreePlayers);
+                    items[i].Title = "3 игрока"; //Переопределить под локализацию
+                    items[i].BoxItems = GetMenuBoxItems(items[i].Id, modeDirs[i]);
                 }
-                if (modeId == "2x")
+                if (items[i].Id == 2)
                 {
-                    items[i].GameMode = GameMode.TwoPlayers;
-                    items[i].BoxItems = GetMenuBoxItems(GameMode.TwoPlayers);
+                    items[i].Title = "2 игрока"; //Переопределить под локализацию
+                    items[i].BoxItems = GetMenuBoxItems(items[i].Id, modeDirs[i]);
                 }
             }
                 
             return items;
         }
 
-        public MenuBoxItem[] GetMenuBoxItems(GameMode gameMode)
+        public MenuBoxItem[] GetMenuBoxItems(int gameModeId, string path)
         {
-            return null;
+            MenuBoxItem[] items = null;
+
+            string[] boxDirs = Directory.GetDirectories(path);
+            items = new MenuBoxItem[boxDirs.Count()];
+
+            for (int i = 0; i < items.Count(); i++)
+            {
+                items[i] = new MenuBoxItem();
+                items[i].Id = int.Parse(boxDirs[i].Split('_').LastOrDefault());
+                items[i].Title = "Stage " + (items[i].Id + 1);
+                items[i].GameModeId = gameModeId;
+
+                items[i].LevelItems = GetMenuLevelItems(gameModeId, boxDirs[i]);
+            }
+
+            return items;
+        }
+
+        public MenuLevelItem[] GetMenuLevelItems(int gameModeId, string path)
+        {
+            MenuLevelItem[] items = null;
+
+            string[] levelDirs = Directory.GetDirectories(path);
+            items = new MenuLevelItem[levelDirs.Count()];
+
+            for (int i = 0; i < items.Count(); i++)
+            {
+                items[i] = new MenuLevelItem();
+                items[i].Id = int.Parse(levelDirs[i].Split('_').LastOrDefault());
+                items[i].Title = "Level " + (items[i].Id + 1);
+                items[i].GameModeId = gameModeId;
+            }
+
+            return items;
         }
     }
 }

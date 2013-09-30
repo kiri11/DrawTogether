@@ -10,35 +10,37 @@ namespace DrawTogether.Model
     public class UserInteractionService
     {
         private InteractionWindowViewModel _parentWindow;
+        private MenuGameModeItem[] _gameModeItems;
 
-        public UserInteractionService(InteractionWindowViewModel parentWindow)
+        public UserInteractionService(InteractionWindowViewModel parentWindow, MenuGameModeItem[] gameModeItems)
         {
             _parentWindow = parentWindow;
+            _gameModeItems = gameModeItems;
         }
 
-        public void SwitchToStartWindow()
+        public void SwitchToStartPage()
         {
             _parentWindow.Content = new StartPageViewModel(this);
         }
 
-        public void SwitchToPlayersWindow()
+        public void SwitchToGameModesPage()
         {
-            _parentWindow.Content = new PlayersPageViewModel(this);
+            _parentWindow.Content = new GameModesPageViewModel(this, _gameModeItems);
         }
 
-        public void SwitchToBoxesWindow(GameMode gameMode)
+        public void SwitchToBoxesPage(int gameModeId)
         {
-            _parentWindow.Content = new BoxesPageViewModel(this, gameMode);
+            _parentWindow.Content = new BoxesPageViewModel(this, gameModeId, _gameModeItems[gameModeId].BoxItems);
         }
 
-        public void SwitchToLevelsWindow(GameMode gameMode, int boxId)
+        public void SwitchToLevelsPage(int gameModeId, int boxId)
         {
-            _parentWindow.Content = new LevelsPageViewModel(this, gameMode, boxId);
+            _parentWindow.Content = new LevelsPageViewModel(this, gameModeId, boxId, _gameModeItems[gameModeId].BoxItems[boxId].LevelItems);
         }
 
-        public void SwitchToGameWindow(GameMode GameMode, int boxId, int levelId)
+        public void SwitchToGamePage(int gameModeId, int boxId, int levelId)
         {
-            _parentWindow.Content = new GamePageViewModel(this, GameMode, boxId, levelId);            
+            _parentWindow.Content = new GamePageViewModel(this, gameModeId, boxId, levelId);            
         }
 
         public void ShowPauseDialog()
