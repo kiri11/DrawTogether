@@ -9,6 +9,7 @@
     
     <Grid>
         <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" Name="startPage_StartButton" Click="OnStartButtonClick"/>
+        <Button Content="Exit" HorizontalAlignment="Left" Margin="50,0,0,50" VerticalAlignment="Bottom" Width="75" Name="startPage_exitButton" Click="OnExitButtonClick"/>
     </Grid>
     
 </Page>

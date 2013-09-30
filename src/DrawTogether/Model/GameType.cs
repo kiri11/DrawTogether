@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace DrawTogether.Model
 {
-     public enum PlayersCount { TwoPlayers, ThreePlayers, FourPlayers }
+     public enum GameType { TwoPlayers, ThreePlayers, FourPlayers }
 }

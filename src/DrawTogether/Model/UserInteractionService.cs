@@ -26,23 +26,28 @@ namespace DrawTogether.Model
             _parentWindow.Content = new PlayersPageViewModel(this);
         }
 
-        public void SwitchToBoxesWindow(PlayersCount playersCount)
+        public void SwitchToBoxesWindow(GameType gameType)
         {
-            _parentWindow.Content = new BoxesPageViewModel(this, playersCount);
+            _parentWindow.Content = new BoxesPageViewModel(this, gameType);
         }
 
-        public void SwitchToLevelsWindow(PlayersCount playersCount, int boxId)
+        public void SwitchToLevelsWindow(GameType gameType, int boxId)
         {
-            _parentWindow.Content = new LevelsPageViewModel(this, playersCount, boxId);
+            _parentWindow.Content = new LevelsPageViewModel(this, gameType, boxId);
         }
 
-        public void SwitchToGameWindow(PlayersCount playersCount, int boxId, int levelId)
+        public void SwitchToGameWindow(GameType GameType, int boxId, int levelId)
         {
-            _parentWindow.Content = new GamePageViewModel(this, playersCount, boxId, levelId);            
+            _parentWindow.Content = new GamePageViewModel(this, GameType, boxId, levelId);            
         }
 
         public void ShowPauseDialog()
         {
+        }
+
+        public void CloseApplication()
+        {
+            _parentWindow.Close();
         }
     }
 }

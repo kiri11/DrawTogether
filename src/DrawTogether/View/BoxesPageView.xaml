@@ -8,6 +8,6 @@
 	Title="StagesPageView">
 
     <Grid>
-        
+        <Button Content="Back" HorizontalAlignment="Left" Margin="50,0,0,50" VerticalAlignment="Bottom" Width="75" Name="boxesPage_backButton" Click="OnBackButtonClick"/>
     </Grid>
 </Page>

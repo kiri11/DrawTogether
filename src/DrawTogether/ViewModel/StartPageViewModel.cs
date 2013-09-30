@@ -24,5 +24,9 @@ namespace DrawTogether.ViewModel
             _userInteractionService.SwitchToPlayersWindow();
         }
 
+        private void OnExitButtonClick(object sender, RoutedEventArgs e)
+        {
+            _userInteractionService.CloseApplication();
+        }
     }
 }
