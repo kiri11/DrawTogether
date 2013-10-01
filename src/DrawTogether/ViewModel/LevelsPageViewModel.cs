@@ -31,7 +31,6 @@ namespace DrawTogether.ViewModel
             _boxId = boxId;
             InitializeComponent();
 
-
             levelsPage_listBoxDataBinding.ItemsSource = levelItems;
             levelsPage_listBoxDataBinding.SelectionChanged += OnLevelItemClick;
         }

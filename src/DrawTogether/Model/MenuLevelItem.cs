@@ -11,7 +11,7 @@ namespace DrawTogether.Model
     public class MenuLevelItem : IMenuItem
     {
         private string _title;
-        private ImageBrush _imageBrush;
+        private ImageSource _ImageSource;
         private int _id;
         private int _gameModeId;
 
@@ -52,15 +52,15 @@ namespace DrawTogether.Model
         }
 
 
-        public ImageBrush ImageBrush
+        public ImageSource ImageSource
         {
             get
             {
-                return _imageBrush;
+                return _ImageSource;
             }
             set
             {
-                _imageBrush = value;
+                _ImageSource = value;
             }
         }
     }

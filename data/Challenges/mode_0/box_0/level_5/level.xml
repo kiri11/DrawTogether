@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<level id = "0" box = "0" mode = "4x">
+    <colors amount = "4">
+        <color id = "0" value = "#FFFB2727" />
+        <color id = "1" value = "#FF997000" />
+        <color id = "2" value = "#FF0051FF" />
+        <color id = "3" value = "#FF22C347" />
+    </colors>
+</level>

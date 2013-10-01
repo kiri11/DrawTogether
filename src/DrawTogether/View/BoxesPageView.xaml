@@ -7,7 +7,7 @@
       d:DesignHeight="768" d:DesignWidth="1024"
 	Title="StagesPageView">
     <Grid Background="#FF007985">
-        <ListBox Name="boxesPage_listBoxDataBinding" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent">
+        <ListBox Margin="100,0,0,0" Name="boxesPage_listBoxDataBinding" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 			<ListBox.Style>
 				 <Style TargetType="ListBox">
 					  <Setter Property="BorderThickness" Value="0"/>
@@ -25,9 +25,9 @@
 			  <DataTemplate>
 					<StackPanel>
 						<DockPanel Width="250" Height="300">
-							<Image Source="{Binding ImageBrush}"></Image>
 							<Label VerticalAlignment="Bottom" HorizontalAlignment="Center" DockPanel.Dock="Bottom" Content="{Binding Title}" FontSize="21.333" FontFamily="Buxton Sketch" Margin="0,0,0,30"/>
-						</DockPanel>
+                            <Image Source="{Binding ImageSource}"></Image>
+                        </DockPanel>
                     </StackPanel>
 			  </DataTemplate>
 			</ListBox.ItemTemplate>

@@ -11,7 +11,7 @@ namespace DrawTogether.Model
     public interface IMenuItem
     {
         string Title { get; set; }
-        ImageBrush ImageBrush { get; set; }
+        ImageSource ImageSource { get; set; }
         int Id { get; set; }
         int GameModeId { get; set; }
     }

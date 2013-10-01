@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Xml.Serialization;
 using DrawTogether.Extensions;
+using System.Windows.Media.Imaging;
 
 namespace DrawTogether.Model
 {
@@ -80,6 +81,8 @@ namespace DrawTogether.Model
                 items[i].Id = int.Parse(levelDirs[i].Split('_').LastOrDefault());
                 items[i].Title = "Level " + (items[i].Id + 1);
                 items[i].GameModeId = gameModeId;
+
+                items[i].ImageSource = new BitmapImage(new Uri(levelDirs[i] + "\\960x540.png"));
             }
 
             return items;

@@ -26,7 +26,7 @@
 			  <DataTemplate>
 					<StackPanel>
 						<DockPanel Width="200" Height="200">
-							<Image Source="{Binding ImageBrush}"></Image>
+							<Image Source="{Binding ImageSource}"></Image>
 							<Label VerticalAlignment="Bottom" HorizontalAlignment="Center" DockPanel.Dock="Bottom" Content="{Binding Title}" FontSize="21.333" FontFamily="Buxton Sketch" Margin="0,0,0,30"/>
 						</DockPanel>
                     </StackPanel>
