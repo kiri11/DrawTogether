@@ -88,11 +88,16 @@
     <Compile Include="Extensions\MySerializer.cs" />
     <Compile Include="Model\BitmapCompare.cs" />
     <Compile Include="Model\Correlation.cs" />
+    <Compile Include="Model\GameFactory.cs" />
+    <Compile Include="Model\GameProcessor.cs" />
+    <Compile Include="Model\GameSettings.cs" />
+    <Compile Include="Model\ImageDecoder.cs" />
     <Compile Include="Model\MenuBoxItem.cs" />
     <Compile Include="Model\IMenuItem.cs" />
     <Compile Include="Model\MenuLevelItem.cs" />
     <Compile Include="Model\MenuGameModeItem.cs" />
     <Compile Include="Model\MenuItemsProvider.cs" />
+    <Compile Include="Model\Player.cs" />
     <Compile Include="Model\UserInteractionService.cs" />
     <Compile Include="Resources\AnimatedWrapPanel.cs" />
     <Compile Include="ViewModel\GamePageViewModel.cs" />
@@ -147,7 +152,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Simple Styles.xaml">
+    <Page Include="Resources\Simple Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
