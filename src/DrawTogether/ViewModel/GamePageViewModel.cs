@@ -24,6 +24,8 @@ namespace DrawTogether.ViewModel
         private int _boxId;
         private int _levelId;
 
+        GameProcessor asd;
+
         public GamePageViewModel(UserInteractionService userInteractionService, int gameModeId, int boxId, int levelId)
         {
             _userInteractionService = userInteractionService;
@@ -37,6 +39,22 @@ namespace DrawTogether.ViewModel
             gamePage_PauseButton.Click += gamePage_PauseButton_Click;
             gamePage_ResumeButton.Click += gamePage_ResumeButton_Click;
             gamePage_ExitButton.Click += gamePage_ExitButton_Click;
+
+
+
+            //test
+            var gs = new GameSettings();
+            gs.TopTimerTimeSpan = new TimeSpan(0, 1, 0);
+            gs.BottomTimerTimeSpan = new TimeSpan(0, 2, 0);
+            asd = new GameProcessor(gs);
+            asd.OnStart();
+            asd.TopTimerTick += asd_TopTimerTick;            
+        }
+
+        void asd_TopTimerTick(object sender, string e)
+        {
+            gamePage_TopTimerLabel.Content = e;
+            gamePage_BottomTimerLabel.Content = e;
         }
 
 
@@ -49,14 +67,14 @@ namespace DrawTogether.ViewModel
         void gamePage_ResumeButton_Click(object sender, RoutedEventArgs e)
         {
             gamePage_PauseDialog.Visibility = System.Windows.Visibility.Hidden;
+            asd.OnResume();
         }
 
         void gamePage_PauseButton_Click(object sender, RoutedEventArgs e)
         {
             gamePage_PauseDialog.Visibility = System.Windows.Visibility.Visible;
+            asd.OnStop();
         }
-
-
     }
 }
 

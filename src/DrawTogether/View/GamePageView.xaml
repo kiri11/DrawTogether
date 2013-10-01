@@ -79,10 +79,10 @@
 				<DockPanel.RenderTransform>
 								<ScaleTransform ScaleY="-1" ScaleX="-1"/>
 							</DockPanel.RenderTransform>
-				<Label Content="0:51" FontFamily="SketchFlow Print" FontSize="53.333" FontWeight="Bold" DockPanel.Dock="Bottom" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                <Label Name="gamePage_TopTimerLabel" FontFamily="SketchFlow Print" FontSize="45" FontWeight="Bold" DockPanel.Dock="Bottom" VerticalAlignment="Top" HorizontalAlignment="Center"/>
 			</DockPanel>
 			<DockPanel HorizontalAlignment="Center" Height="100" LastChildFill="False" Margin="0" VerticalAlignment="Bottom" Width="200" Grid.Column="1" Background="White" Opacity="0.8">
-				<Label Content="0:51" FontFamily="SketchFlow Print" FontSize="53.333" FontWeight="Bold" DockPanel.Dock="Bottom" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="24.733,0"/>
+                <Label Name="gamePage_BottomTimerLabel" FontFamily="SketchFlow Print" FontSize="45" FontWeight="Bold" DockPanel.Dock="Bottom" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="24.733,0"/>
 			</DockPanel>
             <Button Name="gamePage_PauseButton" Width="75" Height="75" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Pause"/>
 		</Grid>
