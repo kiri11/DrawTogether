@@ -59,7 +59,7 @@ namespace DrawTogether.Model
             {
                 items[i] = new MenuBoxItem();
                 items[i].Id = int.Parse(boxDirs[i].Split('_').LastOrDefault());
-                items[i].Title = "Stage " + (items[i].Id + 1);
+                items[i].Title = "Box " + (items[i].Id + 1);
                 items[i].GameModeId = gameModeId;
 
                 items[i].LevelItems = GetMenuLevelItems(gameModeId, boxDirs[i]);
