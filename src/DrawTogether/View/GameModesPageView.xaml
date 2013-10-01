@@ -7,19 +7,39 @@
       d:DesignHeight="768" d:DesignWidth="1280"
 	Title="GameModesPageView">
 
-    <Grid>
-        <ListBox Name="gameModePage_listBox" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <ListBox.ItemContainerStyle>
-                <Style TargetType="{x:Type ListBoxItem}">
-                    <Setter Property="Padding" Value="0,0,30,0"/>
-                </Style>
-            </ListBox.ItemContainerStyle>
+    <Grid Background="#FF32FFC7">
+		<ListBox Name="gameModePage_listBox" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent">
+			<ListBox.Style>
+				 <Style TargetType="ListBox">
+					  <Setter Property="BorderThickness" Value="0"/>
+				 </Style>
+			</ListBox.Style>
+
+			<ListBox.ItemContainerStyle>
+				 <Style TargetType="ListBoxItem">
+					  <Setter Property="BorderThickness" Value="0"/>
+					  <Setter Property="Margin" Value="0,0,30,0"/>
+				 </Style>
+			</ListBox.ItemContainerStyle>
+
+			<ListBox.ItemTemplate>
+			  <DataTemplate>
+					<StackPanel>
+						<DockPanel Width="200" Height="200">
+							<Image Source="{Binding ImageBrush}"></Image>
+							<Label VerticalAlignment="Bottom" HorizontalAlignment="Center" DockPanel.Dock="Bottom" Content="{Binding Title}" FontSize="21.333" FontFamily="Buxton Sketch" Margin="0,0,0,30"/>
+						</DockPanel>
+                    </StackPanel>
+			  </DataTemplate>
+			</ListBox.ItemTemplate>
+
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel Orientation="Horizontal"/>
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
         </ListBox>
+
         <Button Content="Back" HorizontalAlignment="Left" Margin="50,0,0,50" VerticalAlignment="Bottom" Width="75" Name="gameModePage_backButton" Click="OnBackButtonClick"/>
     </Grid>
 </Page>

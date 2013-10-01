@@ -4,12 +4,12 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="768" d:DesignWidth="1024"
 	Title="StartPageView">
     
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" Name="startPage_StartButton" Click="OnStartButtonClick"/>
-        <Button Content="Exit" HorizontalAlignment="Left" Margin="50,0,0,50" VerticalAlignment="Bottom" Width="75" Name="startPage_exitButton" Click="OnExitButtonClick"/>
+    <Grid Background="#FF007985">
+        <Button Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" Name="startPage_StartButton" Click="OnStartButtonClick"/>
+        <Button Content="Exit" HorizontalAlignment="Left" Margin="50,0,0,50" VerticalAlignment="Bottom" Width="75" Name="startPage_exitButton" Click="OnExitButtonClick" Height="75"/>
     </Grid>
     
 </Page>

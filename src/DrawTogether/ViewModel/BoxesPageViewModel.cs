@@ -23,40 +23,10 @@ namespace DrawTogether.ViewModel
             _boxItems = boxItems;
             InitializeComponent();
 
-            FillListBox(boxesPage_listBox, boxItems);
-            boxesPage_listBox.SelectionChanged += OnBoxItemClick;
+            boxesPage_listBoxDataBinding.ItemsSource = _boxItems;
+            boxesPage_listBoxDataBinding.SelectionChanged += OnBoxItemClick;
         }
-
-        private void FillListBox(ListBox listBox, MenuBoxItem[] boxItems)
-        {
-            foreach (var boxItem in boxItems)
-            {
-                DockPanel boxDockPanel = MakeListBoxItem(boxItem.Title, boxItem.ImageBrush);
-                listBox.Items.Add(boxDockPanel);
-            }
-        }
-
-        private DockPanel MakeListBoxItem(string title, ImageBrush imageBrush)
-        {
-            DockPanel dockPanel = new DockPanel();
-            dockPanel.FocusVisualStyle = new System.Windows.Style();
-            dockPanel.Background = Brushes.Thistle;
-            
-            dockPanel.Width = 250;
-            dockPanel.Height = 300;
-
-            Label boxTitle = new Label();
-            boxTitle.Content = title;
-
-            boxTitle.VerticalAlignment = System.Windows.VerticalAlignment.Bottom;
-            boxTitle.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
-
-            //templateDockPanel.Children.Add(backgroundImage);
-            dockPanel.Children.Add(boxTitle);
-
-            return dockPanel;
-        }
-
+        
         private void OnBoxItemClick(object sender, RoutedEventArgs e)
         {
             int boxId = ((ListBox)sender).SelectedIndex;

@@ -32,40 +32,9 @@ namespace DrawTogether.ViewModel
             InitializeComponent();
 
 
-            FillLevelsList(levelsPage_listBox, _levelItems);
-            levelsPage_listBox.SelectionChanged += OnLevelItemClick;
+            levelsPage_listBoxDataBinding.ItemsSource = levelItems;
+            levelsPage_listBoxDataBinding.SelectionChanged += OnLevelItemClick;
         }
-
-        private void FillLevelsList(ListBox listBox, MenuLevelItem[] levelItems)
-        {
-            foreach (var levelItem in levelItems)
-            {
-                DockPanel dockPanel = MakeListBoxItem(levelItem.Title, levelItem.ImageBrush);
-                listBox.Items.Add(dockPanel);
-            }
-        }
-
-        private DockPanel MakeListBoxItem(string title, ImageBrush imageBrush)
-        {
-            DockPanel dockPanel = new DockPanel();
-            dockPanel.FocusVisualStyle = new System.Windows.Style();
-            dockPanel.Background = Brushes.Thistle;
-
-            dockPanel.Width = 250;
-            dockPanel.Height = 300;
-
-            Label dockTitle = new Label();
-            dockTitle.Content = title;
-
-            dockTitle.VerticalAlignment = System.Windows.VerticalAlignment.Bottom;
-            dockTitle.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
-
-            //templateDockPanel.Children.Add(backgroundImage);
-            dockPanel.Children.Add(dockTitle);
-
-            return dockPanel;
-        }
-
 
         private void OnLevelItemClick(object sender, RoutedEventArgs e)
         {
