@@ -11,7 +11,7 @@ namespace DrawTogether.Model
 {
     class ImageDecoder
     {
-        private static BitmapSource[] BitmapFrames(string tifPath)
+        public static BitmapSource[] BitmapFrames(string tifPath)
         {
             Stream imageStreamSource = new FileStream(tifPath, FileMode.Open, FileAccess.Read, FileShare.Read);
             TiffBitmapDecoder decoder = new TiffBitmapDecoder(imageStreamSource, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.Default);
