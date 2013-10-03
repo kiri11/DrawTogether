@@ -4,11 +4,19 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="768" d:DesignWidth="1024"
+	  d:DesignWidth="1366"
+      d:DesignHeight="768"
 	Title="StartPageView">
     
-    <Grid Background="#FF007985">
-        <Button Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" Name="startPage_StartButton" Click="OnStartButtonClick"/>
+    <Grid>
+    	<Grid.Background>
+    		<ImageBrush ImageSource="/DrawTogether;component/Resources/startPage_Background.png"/>
+    	</Grid.Background>
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" Name="startPage_StartButton" Click="OnStartButtonClick" Margin="592.5,430,673.5,238" BorderBrush="{x:Null}" BorderThickness="0" ClickMode="Press">
+        	<Button.Background>
+        		<ImageBrush ImageSource="/DrawTogether;component/Resources/startPage_StartButton.png"/>
+        	</Button.Background>
+        </Button>
         <Button Content="Exit" HorizontalAlignment="Left" Margin="50,0,0,50" VerticalAlignment="Bottom" Width="75" Name="startPage_exitButton" Click="OnExitButtonClick" Height="75"/>
     </Grid>
     

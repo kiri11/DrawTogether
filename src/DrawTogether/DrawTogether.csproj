@@ -184,6 +184,10 @@
   <ItemGroup>
     <Folder Include="Fonts\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\startPage_Background.png" />
+    <Resource Include="Resources\startPage_StartButton.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
