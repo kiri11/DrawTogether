@@ -10,11 +10,11 @@
     
     <Grid>
     	<Grid.Background>
-    		<ImageBrush ImageSource="/DrawTogether;component/Resources/startPage_Background.png"/>
+    		<ImageBrush ImageSource="/DrawTogether;component/Resources/Drawables/startPage_Background.png"/>
     	</Grid.Background>
-        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" Name="startPage_StartButton" Click="OnStartButtonClick" Margin="592.5,430,673.5,238" BorderBrush="{x:Null}" BorderThickness="0" ClickMode="Press">
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" Name="startPage_StartButton" Click="OnStartButtonClick" BorderThickness="0" ClickMode="Press">
         	<Button.Background>
-        		<ImageBrush ImageSource="/DrawTogether;component/Resources/startPage_StartButton.png"/>
+        		<ImageBrush ImageSource="/DrawTogether;component/Resources/Drawables/startPage_StartButton.png"/>
         	</Button.Background>
         </Button>
         <Button Content="Exit" HorizontalAlignment="Left" Margin="50,0,0,50" VerticalAlignment="Bottom" Width="75" Name="startPage_exitButton" Click="OnExitButtonClick" Height="75"/>

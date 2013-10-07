@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DrawTogether.Model;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,8 @@ namespace DrawTogether
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+        }
     }
 }

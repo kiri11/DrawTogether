@@ -38,9 +38,9 @@ namespace DrawTogether.Model
             _parentWindow.Content = new LevelsPageViewModel(this, gameModeId, boxId, _gameModeItems[gameModeId].BoxItems[boxId].LevelItems);
         }
 
-        public void SwitchToGamePage(int gameModeId, int boxId, int levelId)
+        public void SwitchToGamePage(GameSettings gameSettings)
         {
-            _parentWindow.Content = new GamePageViewModel(this, gameModeId, boxId, levelId);            
+            _parentWindow.Content = new GamePageViewModel(this, gameSettings);           
         }
 
         public void ShowPauseDialog()

@@ -75,8 +75,8 @@ namespace DrawTogether.Model
 
         private void OnBottomTimerTick(object sender, EventArgs e)
         {
-            RaiseTopTimerTickEventEvent(_bottomTimerTimeSpan.ToString(@"mm\:ss"));
-            if (_bottomTimerTimeSpan == TimeSpan.Zero) _topTimer.Stop();
+            RaiseBottomTimerTickEventEvent(_bottomTimerTimeSpan.ToString(@"mm\:ss"));
+            if (_bottomTimerTimeSpan == TimeSpan.Zero) _bottomTimer.Stop();
             _bottomTimerTimeSpan = _bottomTimerTimeSpan.Add(TimeSpan.FromSeconds(-1));
         }
 

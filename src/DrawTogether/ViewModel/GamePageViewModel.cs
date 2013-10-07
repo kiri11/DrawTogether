@@ -18,62 +18,78 @@ namespace DrawTogether.ViewModel
 {
     public partial class GamePageViewModel : Page
     {
-
         private UserInteractionService _userInteractionService;
-        private int _gameModeId;
-        private int _boxId;
-        private int _levelId;
-
-        GameProcessor asd;
-
-        public GamePageViewModel(UserInteractionService userInteractionService, int gameModeId, int boxId, int levelId)
+        private GameProcessor _gameProcessor;
+        private GameSettings _gameSettings;
+        
+        public GamePageViewModel(UserInteractionService userInteractionService, GameSettings gameSettings)
         {
             _userInteractionService = userInteractionService;
-            _gameModeId = gameModeId;
-            _boxId = boxId;
-            _levelId = levelId;
+            _gameSettings = gameSettings;
 
             InitializeComponent();
+            
+            _gameProcessor = new GameProcessor(_gameSettings);
+
+
+            //перенести всё в xaml Binding
+            gamePage_player1PreviewImage.Source = _gameSettings.Player1.SourceBitmap;
+            gamePage_player2PreviewImage.Source = _gameSettings.Player2.SourceBitmap;
+            gamePage_player3PreviewImage.Source = _gameSettings.Player3.SourceBitmap;
+            gamePage_player4PreviewImage.Source = _gameSettings.Player4.SourceBitmap;
+
+            gamePage_player1InkCanvas.Background = new SolidColorBrush(_gameSettings.Player1.PlayerColor);
+            gamePage_player2InkCanvas.Background = new SolidColorBrush(_gameSettings.Player2.PlayerColor);
+            gamePage_player3InkCanvas.Background = new SolidColorBrush(_gameSettings.Player3.PlayerColor);
+            gamePage_player4InkCanvas.Background = new SolidColorBrush(_gameSettings.Player4.PlayerColor);
+
+            gamePage_player1InkCanvas.Background.Opacity = 0.1;
+            gamePage_player2InkCanvas.Background.Opacity = 0.1;
+            gamePage_player3InkCanvas.Background.Opacity = 0.1;
+            gamePage_player4InkCanvas.Background.Opacity = 0.1;
+
+            gamePage_player1InkCanvas.DefaultDrawingAttributes.Color = _gameSettings.Player1.PlayerColor;
+            gamePage_player2InkCanvas.DefaultDrawingAttributes.Color = _gameSettings.Player2.PlayerColor;
+            gamePage_player3InkCanvas.DefaultDrawingAttributes.Color = _gameSettings.Player3.PlayerColor;
+            gamePage_player4InkCanvas.DefaultDrawingAttributes.Color = _gameSettings.Player4.PlayerColor;
 
             gamePage_PauseDialog.Visibility = System.Windows.Visibility.Hidden;
-            gamePage_PauseButton.Click += gamePage_PauseButton_Click;
-            gamePage_ResumeButton.Click += gamePage_ResumeButton_Click;
-            gamePage_ExitButton.Click += gamePage_ExitButton_Click;
+            gamePage_PauseButton.Click += OnPauseButtonClick;
+            gamePage_ResumeButton.Click += ResumeButtonClick;
+            gamePage_ExitButton.Click += OnExitButtonClick;
 
+            _gameProcessor.TopTimerTick += OnTopTimerTick;
+            _gameProcessor.BottomTimerTick += OnBottomTimerTick;
 
-
-            //test
-            var gs = new GameSettings();
-            gs.TopTimerTimeSpan = new TimeSpan(0, 1, 0);
-            gs.BottomTimerTimeSpan = new TimeSpan(0, 2, 0);
-            asd = new GameProcessor(gs);
-            asd.OnStart();
-            asd.TopTimerTick += asd_TopTimerTick;            
+            //поехали
+            _gameProcessor.OnStart();
         }
 
-        void asd_TopTimerTick(object sender, string e)
+        private void OnBottomTimerTick(object sender, string e)
         {
-            gamePage_TopTimerLabel.Content = e;
             gamePage_BottomTimerLabel.Content = e;
         }
 
+        private void OnTopTimerTick(object sender, string e)
+        {
+            gamePage_TopTimerLabel.Content = e;
+        }
 
-        //Загрушки:
-        void gamePage_ExitButton_Click(object sender, RoutedEventArgs e)
+        private void OnExitButtonClick(object sender, RoutedEventArgs e)
         {
             _userInteractionService.SwitchToStartPage();
         }
 
-        void gamePage_ResumeButton_Click(object sender, RoutedEventArgs e)
+        private void ResumeButtonClick(object sender, RoutedEventArgs e)
         {
             gamePage_PauseDialog.Visibility = System.Windows.Visibility.Hidden;
-            asd.OnResume();
+            _gameProcessor.OnResume();
         }
 
-        void gamePage_PauseButton_Click(object sender, RoutedEventArgs e)
+        private void OnPauseButtonClick(object sender, RoutedEventArgs e)
         {
             gamePage_PauseDialog.Visibility = System.Windows.Visibility.Visible;
-            asd.OnStop();
+            _gameProcessor.OnStop();
         }
     }
 }

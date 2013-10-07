@@ -22,10 +22,13 @@ namespace DrawTogether.ViewModel
         private int _gameModeId;
         private MenuLevelItem[] _levelItems;
         private int _boxId;
+        private GameFactory _gameFactory;
 
         public LevelsPageViewModel(UserInteractionService userInteractionService, int gameModeId, int boxId, MenuLevelItem[] levelItems)
         {
             _userInteractionService = userInteractionService;
+            _gameFactory = new GameFactory();
+
             _gameModeId = gameModeId;
             _levelItems = levelItems;
             _boxId = boxId;
@@ -38,7 +41,7 @@ namespace DrawTogether.ViewModel
         private void OnLevelItemClick(object sender, RoutedEventArgs e)
         {
             int levelId = ((ListBox)sender).SelectedIndex;
-            _userInteractionService.SwitchToGamePage(_gameModeId, _boxId, levelId);
+            _userInteractionService.SwitchToGamePage(_gameFactory.GetSettings(_gameModeId, _boxId, levelId));
         }
 
         private void OnBackButtonClick(object sender, RoutedEventArgs e)
