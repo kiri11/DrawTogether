@@ -4,25 +4,25 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-	  d:DesignWidth="1366"
-      d:DesignHeight="768"
+	  d:DesignWidth="1920"
+      d:DesignHeight="1080"
 	Title="StartPageView">
     
     <Grid>
     	<Grid.Background>
     		<ImageBrush ImageSource="pack://siteoforigin:,,,/View/StartPage_Background.jpg"/>
     	</Grid.Background>
-        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Width="157" Height="157" Name="startPage_StartButton" Click="OnStartButtonClick" BorderThickness="0" ClickMode="Press" Margin="598.5,455.5,610.5,155.5">
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Width="234" Height="217" Name="startPage_StartButton" Click="OnStartButtonClick" BorderThickness="0" ClickMode="Press" Margin="850,660,845,195" BorderBrush="Gray">
         	<Button.Background>
         		<ImageBrush ImageSource="/DrawTogether;component/Resources/Drawables/startPage_StartButton.png"/>
         	</Button.Background>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="78,0,0,104" VerticalAlignment="Bottom" Width="87" Name="startPage_exitButton" Click="OnExitButtonClick" Height="87" RenderTransformOrigin="0.053,0.813">
+        <Button Content="" HorizontalAlignment="Left" Margin="95,0,0,155" VerticalAlignment="Bottom" Width="180" Name="startPage_exitButton" Click="OnExitButtonClick" Height="147" RenderTransformOrigin="0.053,0.813">
         	<Button.Background>
         		<ImageBrush ImageSource="StartPage_ExitButton.png"/>
         	</Button.Background>
         </Button>
-        <Image Margin="337,146,301.626,341.274" Source="StartPage_Logo.png" Stretch="Fill"/>
+        <Image Margin="532,220,520,525" Source="StartPage_Logo.png" Stretch="Fill" Width="868" Height="335"/>
     </Grid>
     
 </Page>
