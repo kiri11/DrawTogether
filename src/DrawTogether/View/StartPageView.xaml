@@ -10,14 +10,19 @@
     
     <Grid>
     	<Grid.Background>
-    		<ImageBrush ImageSource="/DrawTogether;component/Resources/Drawables/startPage_Background.png"/>
+    		<ImageBrush ImageSource="pack://siteoforigin:,,,/View/StartPage_Background.jpg"/>
     	</Grid.Background>
-        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" Name="startPage_StartButton" Click="OnStartButtonClick" BorderThickness="0" ClickMode="Press">
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Width="157" Height="157" Name="startPage_StartButton" Click="OnStartButtonClick" BorderThickness="0" ClickMode="Press" Margin="598.5,455.5,610.5,155.5">
         	<Button.Background>
         		<ImageBrush ImageSource="/DrawTogether;component/Resources/Drawables/startPage_StartButton.png"/>
         	</Button.Background>
         </Button>
-        <Button Content="Exit" HorizontalAlignment="Left" Margin="50,0,0,50" VerticalAlignment="Bottom" Width="75" Name="startPage_exitButton" Click="OnExitButtonClick" Height="75"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="78,0,0,104" VerticalAlignment="Bottom" Width="87" Name="startPage_exitButton" Click="OnExitButtonClick" Height="87" RenderTransformOrigin="0.053,0.813">
+        	<Button.Background>
+        		<ImageBrush ImageSource="StartPage_ExitButton.png"/>
+        	</Button.Background>
+        </Button>
+        <Image Margin="337,146,301.626,341.274" Source="StartPage_Logo.png" Stretch="Fill"/>
     </Grid>
     
 </Page>

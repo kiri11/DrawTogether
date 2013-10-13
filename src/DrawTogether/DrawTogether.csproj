@@ -132,6 +132,9 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="View\StartPage_Background.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -187,12 +190,11 @@
     <Folder Include="Fonts\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="..\..\data\Drawables\startPage_Background.png">
-      <Link>Resources\Drawables\startPage_Background.png</Link>
-    </Resource>
     <Resource Include="..\..\data\Drawables\startPage_StartButton.png">
       <Link>Resources\Drawables\startPage_StartButton.png</Link>
     </Resource>
+    <Resource Include="View\StartPage_ExitButton.png" />
+    <Resource Include="View\StartPage_Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />
