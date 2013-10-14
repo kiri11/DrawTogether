@@ -7,22 +7,22 @@
 	  d:DesignWidth="1920"
       d:DesignHeight="1080"
 	Title="StartPageView">
-    
-    <Grid>
-    	<Grid.Background>
-    		<ImageBrush ImageSource="pack://siteoforigin:,,,/View/StartPage_Background.jpg"/>
-    	</Grid.Background>
-        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Width="234" Height="217" Name="startPage_StartButton" Click="OnStartButtonClick" BorderThickness="0" ClickMode="Press" Margin="850,660,845,195" BorderBrush="Gray">
-        	<Button.Background>
-        		<ImageBrush ImageSource="/DrawTogether;component/Resources/Drawables/startPage_StartButton.png"/>
-        	</Button.Background>
-        </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="95,0,0,155" VerticalAlignment="Bottom" Width="180" Name="startPage_exitButton" Click="OnExitButtonClick" Height="147" RenderTransformOrigin="0.053,0.813">
-        	<Button.Background>
-        		<ImageBrush ImageSource="StartPage_ExitButton.png"/>
-        	</Button.Background>
-        </Button>
-        <Image Margin="532,220,520,525" Source="StartPage_Logo.png" Stretch="Fill" Width="868" Height="335"/>
-    </Grid>
-    
+    <Viewbox MinWidth="800" MinHeight="480" ScrollViewer.VerticalScrollBarVisibility="Disabled" Grid.IsSharedSizeScope="True" >
+		<Grid Width="1920" Height="1080">
+    		<Grid.Background>
+    			<ImageBrush ImageSource="pack://siteoforigin:,,,/View/StartPage_Background.jpg"/>
+    		</Grid.Background>
+			<Button HorizontalAlignment="Center" VerticalAlignment="Center" Width="234" Height="217" Name="startPage_StartButton" Click="OnStartButtonClick" BorderThickness="1" ClickMode="Press" Margin="850,660,845,195" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        		<Button.Background>
+        			<ImageBrush ImageSource="/DrawTogether;component/Resources/Drawables/startPage_StartButton.png"/>
+        		</Button.Background>
+			</Button>
+			<Button HorizontalAlignment="Left" Margin="95,0,0,155" VerticalAlignment="Bottom" Width="180" Name="startPage_exitButton" Click="OnExitButtonClick" Height="147" RenderTransformOrigin="0.053,0.813">
+        		<Button.Background>
+        			<ImageBrush ImageSource="StartPage_ExitButton.png"/>
+        		</Button.Background>
+			</Button>
+			<Image Margin="532,220,520,525" Source="StartPage_Logo.png" Width="868" Height="335"/>
+		</Grid>
+    </Viewbox>
 </Page>
