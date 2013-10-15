@@ -27,22 +27,8 @@ namespace DrawTogether.Model
                 items[i] = new MenuGameModeItem();
                 items[i].Id = int.Parse(modeDirs[i].Split('_').LastOrDefault());
                 items[i].GameModeId = items[i].Id;
-
-                if (items[i].Id == 0)
-                {
-                    items[i].Title = "4 игрока"; //Переопределить под локализацию
-                    items[i].BoxItems = GetMenuBoxItems(items[i].Id, modeDirs[i]);
-                }
-                if (items[i].Id == 1)
-                {
-                    items[i].Title = "3 игрока"; //Переопределить под локализацию
-                    items[i].BoxItems = GetMenuBoxItems(items[i].Id, modeDirs[i]);
-                }
-                if (items[i].Id == 2)
-                {
-                    items[i].Title = "2 игрока"; //Переопределить под локализацию
-                    items[i].BoxItems = GetMenuBoxItems(items[i].Id, modeDirs[i]);
-                }
+                items[i].BoxItems = GetMenuBoxItems(items[i].Id, modeDirs[i]);
+                items[i].ImageSource = new BitmapImage(new System.Uri(modeDirs[i] + @"/modeButton.png"));
             }
                 
             return items;
