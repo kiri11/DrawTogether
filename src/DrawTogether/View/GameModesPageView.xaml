@@ -4,10 +4,13 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="768" d:DesignWidth="1280"
+      d:DesignHeight="1080" d:DesignWidth="1920"
 	Title="GameModesPageView">
 
-    <Grid Background="#FF32FFC7">
+    <Grid>
+    	<Grid.Background>
+    		<ImageBrush ImageSource="pack://siteoforigin:,,,/View/GameModesPageView_Background.jpg"/>
+    	</Grid.Background>
 		<ListBox Name="gameModePage_listBox" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent">
 			<ListBox.Style>
 				 <Style TargetType="ListBox">
@@ -40,6 +43,35 @@
             </ListBox.ItemsPanel>
         </ListBox>
 
-        <Button Content="Back" HorizontalAlignment="Left" Margin="50,0,0,50" VerticalAlignment="Bottom" Width="75" Name="gameModePage_backButton" Click="OnBackButtonClick"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="117,0,0,200" VerticalAlignment="Bottom" Width="143" Name="gameModePage_backButton" Click="OnBackButtonClick" Height="81">
+        	<Button.Background>
+        		<ImageBrush ImageSource="GameModesPageView_Back_Button.png"/>
+        	</Button.Background>
+        </Button>
+        <Image Margin="485,160,474,508" Source="GameModesPageView_Logo.png" Stretch="Fill">
+        	<Image.OpacityMask>
+        		<ImageBrush ImageSource="GameModesPageView_Logo.png"/>
+        	</Image.OpacityMask>
+        </Image>
+        <Image Margin="979,642,752,274" Source="GameModesPageView_4Players_Button.png" Stretch="Fill">
+        	<Image.OpacityMask>
+        		<ImageBrush ImageSource="GameModesPageView_4Players_Button.png"/>
+        	</Image.OpacityMask>
+        </Image>
+        <Image Margin="546,642,1200,276" Source="GameModesPageView_2Players_Button.png" Stretch="Fill">
+        	<Image.OpacityMask>
+        		<ImageBrush ImageSource="GameModesPageView_2Players_Button.png"/>
+        	</Image.OpacityMask>
+        </Image>
+        <Image Margin="761,644,978,276" Source="GameModesPageView_3Players_Button.png" Stretch="Fill">
+        	<Image.OpacityMask>
+        		<ImageBrush ImageSource="GameModesPageView_3Players_Button.png"/>
+        	</Image.OpacityMask>
+        </Image>
+        <Image Margin="1207,637,541,274" Source="GameModesPageView_1Players_Button.png" Stretch="Fill">
+        	<Image.OpacityMask>
+        		<ImageBrush ImageSource="GameModesPageView_1Players_Button.png"/>
+        	</Image.OpacityMask>
+        </Image>
     </Grid>
 </Page>

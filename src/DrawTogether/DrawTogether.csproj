@@ -132,6 +132,12 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="View\GameModesPageView_Background.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="View\LevelsPageView_Background.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="View\StartPage_Background.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -193,6 +199,12 @@
     <Resource Include="..\..\data\Drawables\startPage_StartButton.png">
       <Link>Resources\Drawables\startPage_StartButton.png</Link>
     </Resource>
+    <Resource Include="View\GameModesPageView_1Players_Button.png" />
+    <Resource Include="View\GameModesPageView_2Players_Button.png" />
+    <Resource Include="View\GameModesPageView_3Players_Button.png" />
+    <Resource Include="View\GameModesPageView_4Players_Button.png" />
+    <Resource Include="View\GameModesPageView_Back_Button.png" />
+    <Resource Include="View\GameModesPageView_Logo.png" />
     <Resource Include="View\StartPage_ExitButton.png" />
     <Resource Include="View\StartPage_Logo.png" />
   </ItemGroup>
