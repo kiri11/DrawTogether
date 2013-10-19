@@ -48,22 +48,22 @@ namespace DrawTogether.Model
             //Затычки на цвет и рисунки
             if (playerId == 0)
             {
-                player.PlayerColor = Color.FromRgb(0,255,0);
+                player.PlayerColor = BitmapProcessor.GetPlayerColor(bitmapSources[0]);
                 player.SourceBitmap = bitmapSources[0];
             }
             if (playerId == 1)
             {
-                player.PlayerColor = Color.FromRgb(0, 0, 255);
+                player.PlayerColor = BitmapProcessor.GetPlayerColor(bitmapSources[1]);
                 player.SourceBitmap = bitmapSources[1];
             }
             if (playerId == 2)
             {
-                player.PlayerColor = Color.FromRgb(255, 255, 0);
+                player.PlayerColor = BitmapProcessor.GetPlayerColor(bitmapSources[2]);
                 player.SourceBitmap = bitmapSources[2];
             }
             if (playerId == 3)
             {
-                player.PlayerColor = Color.FromRgb(255, 0, 0);
+                player.PlayerColor = BitmapProcessor.GetPlayerColor(bitmapSources[3]);
                 player.SourceBitmap = bitmapSources[3];
             }
 
