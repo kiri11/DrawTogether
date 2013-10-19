@@ -87,7 +87,9 @@
     </Compile>
     <Compile Include="AppSettings.cs" />
     <Compile Include="Extensions\MySerializer.cs" />
-    <Compile Include="Model\BitmapCompare.cs" />
+    <Compile Include="Model\BitmapProcessor.cs" />
+    <Compile Include="Model\ResultsProvider.cs" />
+    <Compile Include="Model\_BitmapCompare.cs" />
     <Compile Include="Model\Correlation.cs" />
     <Compile Include="Model\GameFactory.cs" />
     <Compile Include="Model\GameProcessor.cs" />

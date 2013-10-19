@@ -4,8 +4,9 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="768" d:DesignWidth="1024"
-	Title="StagesPageView">
+      d:DesignHeight="768" d:DesignWidth="1024">
+    
+    <!--ViewBox-->
     <Grid Background="#FF007985">
         <ListBox Margin="100,0,0,0" Name="boxesPage_listBoxDataBinding" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 			<ListBox.Style>
