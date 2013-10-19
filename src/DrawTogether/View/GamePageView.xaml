@@ -4,99 +4,137 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="768" d:DesignWidth="1024"
-	Title="GamePageView">
-	<Grid>
-		<Grid>
-				<Grid.RowDefinitions>
-					<RowDefinition/>
-					<RowDefinition/>
-				</Grid.RowDefinitions>
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-				</Grid.ColumnDefinitions>
-            
-            <!-- Причесать разметку! -->
-            
-				<Border BorderThickness="2" BorderBrush="DarkGray" Margin="0,0,-1,-1" Grid.Column="0" Grid.Row="0">
-					<Grid>
-                    <InkCanvas Name="gamePage_player3InkCanvas" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Opacity="0.4" Margin="0,0,0,0">
-							<InkCanvas.DefaultDrawingAttributes>
-								<DrawingAttributes FitToCurve="True" Height="5" IgnorePressure="False" IsHighlighter="False" StylusTip="Ellipse" StylusTipTransform="Identity" Width="5"/>
-							</InkCanvas.DefaultDrawingAttributes>
-						</InkCanvas>
-                    <Border BorderThickness="2" BorderBrush="DarkGray" Width="96" Height="54" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="White" Opacity="0.8">
-						<Image Name="gamePage_player3PreviewImage" Width="96" Height="54" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-							<Image.RenderTransform>
-                                <ScaleTransform ScaleY="1"/>
-							</Image.RenderTransform>
-						</Image>
-						</Border>
-					</Grid>
-				</Border>
-            <Border BorderThickness="2" BorderBrush="DarkGray" Margin="0,-1,-1,0" Grid.Column="0" Grid.Row="1">
-					<Grid>
-						 <InkCanvas Name="gamePage_player1InkCanvas" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Opacity="0.4" Margin="0,0,0,0">
-							<InkCanvas.DefaultDrawingAttributes>
-								<DrawingAttributes FitToCurve="True" Height="5" IgnorePressure="False" StylusTip="Ellipse" StylusTipTransform="Identity" Width="5"/>
-							</InkCanvas.DefaultDrawingAttributes>
-						</InkCanvas>
-                    <Border BorderThickness="2" BorderBrush="DarkGray" Width="96" Height="54" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Opacity="0.8">
-						<Image Name="gamePage_player1PreviewImage" Width="96" Height="54" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-						</Border>
-					</Grid>
-				</Border>
-            <Border BorderThickness="2" BorderBrush="DarkGray" Margin="-1,0,0,-1" Grid.Column="1" Grid.Row="0">
-					<Grid>
-                    <InkCanvas Name="gamePage_player4InkCanvas" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Opacity="0.4" Margin="0,0,0,0">
-						<InkCanvas.DefaultDrawingAttributes>
-							<DrawingAttributes Height="5" IgnorePressure="False" StylusTip="Ellipse" StylusTipTransform="Identity" Width="5" FitToCurve="True"/>
-						</InkCanvas.DefaultDrawingAttributes>
-					</InkCanvas>
-                    <Border BorderThickness="2" BorderBrush="DarkGray" Width="96" Height="54" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="White" Opacity="0.8">
-						<Image Name="gamePage_player4PreviewImage" Width="96" Height="54" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-							<Image.RenderTransform>
-								<ScaleTransform ScaleY="1"/>
-							</Image.RenderTransform>
-						</Image>
-						</Border>
-					</Grid>
-				</Border>
-            <Border BorderThickness="2" BorderBrush="DarkGray" Margin="-1,-1,0,0" Grid.Column="1" Grid.Row="1">
-					<Grid>
-                    <InkCanvas Name="gamePage_player2InkCanvas" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="{x:Null}" Opacity="0.4">
-							<InkCanvas.DefaultDrawingAttributes>
-								<DrawingAttributes FitToCurve="True" Height="5" IgnorePressure="False" IsHighlighter="False" StylusTip="Ellipse" StylusTipTransform="Identity" Width="5"/>
-							</InkCanvas.DefaultDrawingAttributes>
-						</InkCanvas>
-                    <Border BorderThickness="2" BorderBrush="DarkGray" Width="96" Height="54" HorizontalAlignment="Right" VerticalAlignment="Top" Background="White" Opacity="0.8">
-						<Image Name="gamePage_player2PreviewImage" Width="96" Height="54" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-						</Border>
-					</Grid>
-				</Border>
-		</Grid>
+      d:DesignHeight="1080"
+      d:DesignWidth="1920">
 
-		<Grid Width="200" Height="200"  HorizontalAlignment="Center" VerticalAlignment="Center">
-			<DockPanel Height="100" LastChildFill="False" Margin="0,0,-400,0" VerticalAlignment="Bottom" Width="200" Background="White" Opacity="0.8" HorizontalAlignment="Center">
-				<DockPanel.RenderTransform>
-								<ScaleTransform ScaleY="-1" ScaleX="-1"/>
-							</DockPanel.RenderTransform>
-                <Label Name="gamePage_TopTimerLabel" FontFamily="SketchFlow Print" FontSize="45" FontWeight="Bold" DockPanel.Dock="Bottom" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-			</DockPanel>
-			<DockPanel HorizontalAlignment="Center" Height="100" LastChildFill="False" Margin="0" VerticalAlignment="Bottom" Width="200" Grid.Column="1" Background="White" Opacity="0.8">
-                <Label Name="gamePage_BottomTimerLabel" FontFamily="SketchFlow Print" FontSize="45" FontWeight="Bold" DockPanel.Dock="Bottom" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="24.733,0"/>
-			</DockPanel>
-            <Button Name="gamePage_PauseButton" Width="75" Height="75" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Pause"/>
-		</Grid>
-        
-		<Grid Background="#B2000000" Name="gamePage_PauseDialog" Visibility="Hidden">
-			<DockPanel HorizontalAlignment="Center" Height="400" VerticalAlignment="Center" Width="300" Background="#FF00DCFF">
-				<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-					<Button Name="gamePage_ResumeButton" Content="Resume" VerticalAlignment="Top" Width="200" Height="50" Margin="0,0,0,50" HorizontalAlignment="Center"/>
-					<Button Name="gamePage_ExitButton" Content="Exit" HorizontalAlignment="Center" Width="200" Height="50" VerticalAlignment="Bottom"/>
-				</StackPanel>
-			</DockPanel>
-		</Grid>
-	</Grid>
+    <Viewbox MinWidth="800" MinHeight="480" ScrollViewer.VerticalScrollBarVisibility="Disabled" Grid.IsSharedSizeScope="True">
+        <Grid Width="1920" Height="1080">
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Player 3 -->
+                <Border Grid.Column="0" Grid.Row="0"
+                    BorderThickness="2" 
+                    BorderBrush="DarkGray" 
+                    Margin="0,0,-1,-1">
+                    
+                    <Grid>
+                        <InkCanvas
+                            VerticalAlignment="Stretch" 
+                            HorizontalAlignment="Stretch">
+
+                            <InkCanvas.DefaultDrawingAttributes>
+                                <DrawingAttributes 
+                                    FitToCurve="True" 
+                                    Height="5" 
+                                    IgnorePressure="False" 
+                                    IsHighlighter="False" 
+                                    StylusTip="Ellipse"
+                                    StylusTipTransform="Identity" 
+                                    Width="5"/>
+                            </InkCanvas.DefaultDrawingAttributes>
+                        </InkCanvas>
+
+                        <Border 
+                            HorizontalAlignment="Left" 
+                            VerticalAlignment="Bottom" 
+                            BorderThickness="2" 
+                            BorderBrush="DarkGray"
+                            Width="96" 
+                            Height="54" 
+                            Background="White" 
+                            Opacity="0.8">
+
+                            <Image
+                                Width="96" 
+                                Height="54" 
+                                HorizontalAlignment="Left" 
+                                VerticalAlignment="Bottom">
+
+                                <Image.RenderTransform>
+                                    <ScaleTransform ScaleY="1"/>
+                                </Image.RenderTransform>
+                            </Image>
+                            
+                        </Border>
+                    </Grid>
+                </Border>
+
+
+
+
+                <Border BorderThickness="2" BorderBrush="DarkGray" Margin="0,-1,-1,0" Grid.Column="0" Grid.Row="1">
+                    <Grid>
+                        <InkCanvas Name="gamePage_player1InkCanvas" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Opacity="0.4" Margin="0,0,0,0">
+                            <InkCanvas.DefaultDrawingAttributes>
+                                <DrawingAttributes FitToCurve="True" Height="5" IgnorePressure="False" StylusTip="Ellipse" StylusTipTransform="Identity" Width="5"/>
+                            </InkCanvas.DefaultDrawingAttributes>
+                        </InkCanvas>
+                        <Border BorderThickness="2" BorderBrush="DarkGray" Width="96" Height="54" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Opacity="0.8">
+                            <Image Name="gamePage_player1PreviewImage" Width="96" Height="54" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        </Border>
+                    </Grid>
+                </Border>
+                <Border BorderThickness="2" BorderBrush="DarkGray" Margin="-1,0,0,-1" Grid.Column="1" Grid.Row="0">
+                    <Grid>
+                        <InkCanvas Name="gamePage_player4InkCanvas" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Opacity="0.4" Margin="0,0,0,0">
+                            <InkCanvas.DefaultDrawingAttributes>
+                                <DrawingAttributes Height="5" IgnorePressure="False" StylusTip="Ellipse" StylusTipTransform="Identity" Width="5" FitToCurve="True"/>
+                            </InkCanvas.DefaultDrawingAttributes>
+                        </InkCanvas>
+                        <Border BorderThickness="2" BorderBrush="DarkGray" Width="96" Height="54" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="White" Opacity="0.8">
+                            <Image Name="gamePage_player4PreviewImage" Width="96" Height="54" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                                <Image.RenderTransform>
+                                    <ScaleTransform ScaleY="1"/>
+                                </Image.RenderTransform>
+                            </Image>
+                        </Border>
+                    </Grid>
+                </Border>
+                <Border BorderThickness="2" BorderBrush="DarkGray" Margin="-1,-1,0,0" Grid.Column="1" Grid.Row="1">
+                    <Grid>
+                        <InkCanvas Name="gamePage_player2InkCanvas" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="{x:Null}" Opacity="0.4">
+                            <InkCanvas.DefaultDrawingAttributes>
+                                <DrawingAttributes FitToCurve="True" Height="5" IgnorePressure="False" IsHighlighter="False" StylusTip="Ellipse" StylusTipTransform="Identity" Width="5"/>
+                            </InkCanvas.DefaultDrawingAttributes>
+                        </InkCanvas>
+                        <Border BorderThickness="2" BorderBrush="DarkGray" Width="96" Height="54" HorizontalAlignment="Right" VerticalAlignment="Top" Background="White" Opacity="0.8">
+                            <Image Name="gamePage_player2PreviewImage" Width="96" Height="54" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>
+
+            <Grid Width="200" Height="200"  HorizontalAlignment="Center" VerticalAlignment="Center">
+                <DockPanel Height="100" LastChildFill="False" Margin="0,0,-400,0" VerticalAlignment="Bottom" Width="200" Background="White" Opacity="0.8" HorizontalAlignment="Center">
+                    <DockPanel.RenderTransform>
+                        <ScaleTransform ScaleY="-1" ScaleX="-1"/>
+                    </DockPanel.RenderTransform>
+                    <Label Name="gamePage_TopTimerLabel" FontFamily="SketchFlow Print" FontSize="45" FontWeight="Bold" DockPanel.Dock="Bottom" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                </DockPanel>
+                <DockPanel HorizontalAlignment="Center" Height="100" LastChildFill="False" Margin="0" VerticalAlignment="Bottom" Width="200" Grid.Column="1" Background="White" Opacity="0.8">
+                    <Label Name="gamePage_BottomTimerLabel" FontFamily="SketchFlow Print" FontSize="45" FontWeight="Bold" DockPanel.Dock="Bottom" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="24.733,0"/>
+                </DockPanel>
+                <Button Name="gamePage_PauseButton" Width="75" Height="75" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Pause"/>
+            </Grid>
+
+            <Grid Background="#B2000000" Name="gamePage_PauseDialog" Visibility="Hidden">
+                <DockPanel HorizontalAlignment="Center" Height="400" VerticalAlignment="Center" Width="300" Background="#FF00DCFF">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Button Name="gamePage_ResumeButton" Content="Resume" VerticalAlignment="Top" Width="200" Height="50" Margin="0,0,0,50" HorizontalAlignment="Center"/>
+                        <Button Name="gamePage_ExitButton" Content="Exit" HorizontalAlignment="Center" Width="200" Height="50" VerticalAlignment="Bottom"/>
+                    </StackPanel>
+                </DockPanel>
+            </Grid>
+        </Grid>
+    </Viewbox>
 </Page>

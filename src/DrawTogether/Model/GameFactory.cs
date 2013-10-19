@@ -29,10 +29,23 @@ namespace DrawTogether.Model
             gameSettings.TopTimerTimeSpan = new TimeSpan(0,2,0);
             gameSettings.BottomTimerTimeSpan = new TimeSpan(0, 1, 0);
 
-            gameSettings.Player1 = GetPlayer(0, modeId, boxId, levelId);
-            gameSettings.Player2 = GetPlayer(1, modeId, boxId, levelId);
-            gameSettings.Player3 = GetPlayer(2, modeId, boxId, levelId);
-            gameSettings.Player4 = GetPlayer(3, modeId, boxId, levelId);
+            if (modeId == 0)
+            {
+                gameSettings.Players = new Player[4];
+            }
+            if (modeId == 1)
+            {
+                gameSettings.Players = new Player[3];
+            }
+            if (modeId == 2)
+            {
+                gameSettings.Players = new Player[2];
+            }
+
+            for (int i = 0; i < gameSettings.Players.Count(); i++)
+            {
+                gameSettings.Players[i] = GetPlayer(i, modeId, boxId, levelId);
+            }
 
             return gameSettings;
         }
@@ -45,27 +58,9 @@ namespace DrawTogether.Model
             BitmapSource[] bitmapSources = ImageDecoder.BitmapFrames(AppSettings.DataDirectoryPath +
                 @"/Challenges/mode_" + modeId + @"/box_" + boxId + @"/level_" + levelId + @"/960x540.tif");
 
-            //Затычки на цвет и рисунки
-            if (playerId == 0)
-            {
-                player.PlayerColor = BitmapProcessor.GetPlayerColor(bitmapSources[0]);
-                player.SourceBitmap = bitmapSources[0];
-            }
-            if (playerId == 1)
-            {
-                player.PlayerColor = BitmapProcessor.GetPlayerColor(bitmapSources[1]);
-                player.SourceBitmap = bitmapSources[1];
-            }
-            if (playerId == 2)
-            {
-                player.PlayerColor = BitmapProcessor.GetPlayerColor(bitmapSources[2]);
-                player.SourceBitmap = bitmapSources[2];
-            }
-            if (playerId == 3)
-            {
-                player.PlayerColor = BitmapProcessor.GetPlayerColor(bitmapSources[3]);
-                player.SourceBitmap = bitmapSources[3];
-            }
+            //возможно однажды даст сбой
+            player.PlayerColor = BitmapProcessor.GetPlayerColor(bitmapSources[playerId]);
+            player.SourceBitmap = bitmapSources[playerId];
 
             return player;
         }

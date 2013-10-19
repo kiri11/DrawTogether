@@ -21,7 +21,7 @@ namespace DrawTogether.Model
             return 0; //затычка
         }
 
-        public static System.Windows.Media.Color GetPlayerColor(BitmapSource bitmap)
+        public static Color GetPlayerColor(BitmapSource bitmap)
         {
             int w = bitmap.PixelWidth;
             int h = bitmap.PixelHeight;
@@ -36,7 +36,7 @@ namespace DrawTogether.Model
                     byte green = pixels[offset + 1];
                     byte red = pixels[offset + 2];
 
-                    if (blue < 255 || green < 255 || red < 255)
+                    if (blue < 255 || green < 255 || red < 255) 
                     {
                         return Color.FromRgb(red,green, blue);
                     }
