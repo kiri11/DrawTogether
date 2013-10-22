@@ -16,6 +16,9 @@ namespace DrawTogether.Model
         public TimeSpan TopTimerTimeSpan { get; set; }
         public TimeSpan BottomTimerTimeSpan { get; set; }
 
-        public Player[] Players { get; set; }
+        public Player Player1 { get; set; }
+        public Player Player2 { get; set; }
+        public Player Player3 { get; set; }
+        public Player Player4 { get; set; }
     }
 }

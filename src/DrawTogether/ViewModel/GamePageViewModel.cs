@@ -30,30 +30,28 @@ namespace DrawTogether.ViewModel
             InitializeComponent();
             
             _gameProcessor = new GameProcessor(_gameSettings);
-            
+
+
             //перенести всё в xaml Binding
-            //gamePage_player1PreviewImage.Source = _gameSettings.Player1.SourceBitmap;
-            //gamePage_player2PreviewImage.Source = _gameSettings.Player2.SourceBitmap;
-            //gamePage_player3PreviewImage.Source = _gameSettings.Player3.SourceBitmap;
-            //gamePage_player4PreviewImage.Source = _gameSettings.Player4.SourceBitmap;
+            gamePage_player1PreviewImage.Source = _gameSettings.Player1.SourceBitmap;
+            gamePage_player2PreviewImage.Source = _gameSettings.Player2.SourceBitmap;
+            gamePage_player3PreviewImage.Source = _gameSettings.Player3.SourceBitmap;
+            gamePage_player4PreviewImage.Source = _gameSettings.Player4.SourceBitmap;
 
-            //gamePage_player1InkCanvas.Background = new SolidColorBrush(_gameSettings.Player1.PlayerColor);
-            //gamePage_player2InkCanvas.Background = new SolidColorBrush(_gameSettings.Player2.PlayerColor);
-            //gamePage_player3InkCanvas.Background = new SolidColorBrush(_gameSettings.Player3.PlayerColor);
-            //gamePage_player4InkCanvas.Background = new SolidColorBrush(_gameSettings.Player4.PlayerColor);
+            gamePage_player1InkCanvas.Background = new SolidColorBrush(_gameSettings.Player1.PlayerColor);
+            gamePage_player2InkCanvas.Background = new SolidColorBrush(_gameSettings.Player2.PlayerColor);
+            gamePage_player3InkCanvas.Background = new SolidColorBrush(_gameSettings.Player3.PlayerColor);
+            gamePage_player4InkCanvas.Background = new SolidColorBrush(_gameSettings.Player4.PlayerColor);
 
-            //gamePage_player1InkCanvas.Background.Opacity = 0.1;
-            //gamePage_player2InkCanvas.Background.Opacity = 0.1;
-            //gamePage_player3InkCanvas.Background.Opacity = 0.1;
-            //gamePage_player4InkCanvas.Background.Opacity = 0.1;
+            gamePage_player1InkCanvas.Background.Opacity = 0.1;
+            gamePage_player2InkCanvas.Background.Opacity = 0.1;
+            gamePage_player3InkCanvas.Background.Opacity = 0.1;
+            gamePage_player4InkCanvas.Background.Opacity = 0.1;
 
-            //gamePage_player1InkCanvas.DefaultDrawingAttributes.Color = _gameSettings.Player1.PlayerColor;
-            //gamePage_player2InkCanvas.DefaultDrawingAttributes.Color = _gameSettings.Player2.PlayerColor;
-            //gamePage_player3InkCanvas.DefaultDrawingAttributes.Color = _gameSettings.Player3.PlayerColor;
-            //gamePage_player4InkCanvas.DefaultDrawingAttributes.Color = _gameSettings.Player4.PlayerColor;
-
-
-
+            gamePage_player1InkCanvas.DefaultDrawingAttributes.Color = _gameSettings.Player1.PlayerColor;
+            gamePage_player2InkCanvas.DefaultDrawingAttributes.Color = _gameSettings.Player2.PlayerColor;
+            gamePage_player3InkCanvas.DefaultDrawingAttributes.Color = _gameSettings.Player3.PlayerColor;
+            gamePage_player4InkCanvas.DefaultDrawingAttributes.Color = _gameSettings.Player4.PlayerColor;
 
             gamePage_PauseDialog.Visibility = System.Windows.Visibility.Hidden;
             gamePage_PauseButton.Click += OnPauseButtonClick;
