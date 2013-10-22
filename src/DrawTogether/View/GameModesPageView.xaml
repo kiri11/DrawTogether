@@ -4,52 +4,93 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="1080" d:DesignWidth="1920"
-	Title="GameModesPageView">
-	
-	<Viewbox MinWidth="800" MinHeight="480" ScrollViewer.VerticalScrollBarVisibility="Disabled" Grid.IsSharedSizeScope="True">
-		<Grid Width="1920" Height="1080">
-    		<Grid.Background>
-    			<ImageBrush ImageSource="pack://siteoforigin:,,,/View/GameModesPageView_Background.jpg"/>
-    		</Grid.Background>
-			<ListBox Name="gameModePage_listBox" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="Transparent" Margin="0,0,0,270">
-				<ListBox.Style>
-					 <Style TargetType="ListBox">
-						  <Setter Property="BorderThickness" Value="0"/>
-					 </Style>
-				</ListBox.Style>
+      d:DesignWidth="1920"
+      d:DesignHeight="1080" >
 
-				<ListBox.ItemContainerStyle>
-					 <Style TargetType="ListBoxItem">
-						  <Setter Property="BorderThickness" Value="0"/>
-						  <Setter Property="Margin" Value="0,0,30,0"/>
-					 </Style>
-				</ListBox.ItemContainerStyle>
+    <!--Разобрать стили + стили для DockPanel в ListBox-->
+    <Page.Resources>
+        <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <!--болванка-->
+                        <Border Name="border" BorderBrush="{x:Null}" Background="{TemplateBinding Background}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
 
-				<ListBox.ItemTemplate>
-				  <DataTemplate>
-						<StackPanel>
-							<DockPanel Width="200" Height="200">
-								<Image Source="{Binding ImageSource}"></Image>
-								<Label VerticalAlignment="Bottom" HorizontalAlignment="Center" DockPanel.Dock="Bottom" Content="{Binding Title}" FontSize="21.333" FontFamily="Buxton Sketch" Margin="0,0,0,30"/>
-							</DockPanel>
-						</StackPanel>
-				  </DataTemplate>
-				</ListBox.ItemTemplate>
+    <Viewbox MinWidth="800" MinHeight="480" ScrollViewer.VerticalScrollBarVisibility="Disabled" Grid.IsSharedSizeScope="True">
+        <Grid Width="1920" Height="1080">
+            
+            <Grid.Background>
+                <ImageBrush ImageSource="/DrawTogether;component/Resources/Drawables/GameModesPageView_Background.jpg"/>
+            </Grid.Background>
 
-				<ListBox.ItemsPanel>
-					<ItemsPanelTemplate>
-						<VirtualizingStackPanel Orientation="Horizontal"/>
-					</ItemsPanelTemplate>
-				</ListBox.ItemsPanel>
+            <ListBox Name="gameModePage_listBox" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="Transparent" Margin="0,0,0,270">
 
-			</ListBox>
+                <ListBox.Style>
+                    <Style TargetType="ListBox">
+                        <Setter Property="BorderThickness" Value="0"/>
+                    </Style>
+                </ListBox.Style>
 
-			<Button  HorizontalAlignment="Left" Margin="117,0,0,200" VerticalAlignment="Bottom" Width="143" Name="gameModePage_backButton" Click="OnBackButtonClick" Height="81" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Disabled" Padding="0" >
-        		<Image Source="GameModesPageView_Back_Button.png" />
-			</Button>
-			<Image Margin="485,160,474,508" Source="GameModesPageView_Logo.png" Stretch="Fill" />
-        
-		</Grid>
-	</Viewbox>
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="Margin" Value="0,0,30,0"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <DockPanel
+                                Width="200" Height="200">
+                                <Image Source="{Binding ImageSource}"/>
+                                <Label VerticalAlignment="Bottom" 
+                                   HorizontalAlignment="Center" 
+                                   DockPanel.Dock="Bottom" 
+                                   Content="{Binding Title}" 
+                                   FontSize="21.333" 
+                                   FontFamily="Buxton Sketch" 
+                                   Margin="0,0,0,30"/>
+                            </DockPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+
+            </ListBox>
+
+            <Button  
+                Style="{StaticResource ButtonStyle}"
+                HorizontalAlignment="Left" 
+                     VerticalAlignment="Bottom" 
+                     Margin="120,0,0,150"
+                     Width="140"
+                     Height="80" 
+                     Name="gameModePage_backButton"
+                     BorderBrush="{x:Null}"
+                     Click="OnBackButtonClick" >
+
+                <Button.Background>
+                    <ImageBrush ImageSource="/DrawTogether;component/Resources/Drawables/GameModesPageView_Back_Button.png"/>
+                </Button.Background>
+            </Button>
+
+            <Image 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Margin="0,200,0,0"
+                Width="700"
+                Source="/DrawTogether;component/Resources/Drawables/GameModesPageView_Logo.png"/>
+        </Grid>
+    </Viewbox>
 </Page>

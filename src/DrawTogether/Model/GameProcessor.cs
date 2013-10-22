@@ -19,14 +19,13 @@ namespace DrawTogether.Model
         private TimeSpan _topTimerTimeSpan;
         private TimeSpan _bottomTimerTimeSpan;
 
-        GameSettings _settings;
+        private GameSettings _settings;
 
         public GameProcessor(GameSettings settings)
         {
             _settings = settings;
             OnCreate();
         }
-
 
         public void OnCreate()
         {

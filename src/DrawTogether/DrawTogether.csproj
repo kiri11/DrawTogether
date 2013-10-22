@@ -87,7 +87,9 @@
     </Compile>
     <Compile Include="AppSettings.cs" />
     <Compile Include="Extensions\MySerializer.cs" />
-    <Compile Include="Model\BitmapCompare.cs" />
+    <Compile Include="Model\BitmapProcessor.cs" />
+    <Compile Include="Model\ResultsProvider.cs" />
+    <Compile Include="Model\_BitmapCompare.cs" />
     <Compile Include="Model\Correlation.cs" />
     <Compile Include="Model\GameFactory.cs" />
     <Compile Include="Model\GameProcessor.cs" />
@@ -132,15 +134,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="View\GameModesPageView_Background.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="View\LevelsPageView_Background.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="View\StartPage_Background.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -199,10 +192,29 @@
     <Resource Include="..\..\data\Drawables\startPage_StartButton.png">
       <Link>Resources\Drawables\startPage_StartButton.png</Link>
     </Resource>
-    <Resource Include="View\GameModesPageView_Back_Button.png" />
-    <Resource Include="View\GameModesPageView_Logo.png" />
-    <Resource Include="View\StartPage_ExitButton.png" />
-    <Resource Include="View\StartPage_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\..\data\Drawables\GameModesPageView_Background.jpg">
+      <Link>Resources\Drawables\GameModesPageView_Background.jpg</Link>
+    </Resource>
+    <Resource Include="..\..\data\Drawables\GameModesPageView_Back_Button.png">
+      <Link>Resources\Drawables\GameModesPageView_Back_Button.png</Link>
+    </Resource>
+    <Resource Include="..\..\data\Drawables\GameModesPageView_Logo.png">
+      <Link>Resources\Drawables\GameModesPageView_Logo.png</Link>
+    </Resource>
+    <Resource Include="..\..\data\Drawables\LevelsPageView_Background.jpg">
+      <Link>Resources\Drawables\LevelsPageView_Background.jpg</Link>
+    </Resource>
+    <Resource Include="..\..\data\Drawables\StartPage_Background.jpg">
+      <Link>Resources\Drawables\StartPage_Background.jpg</Link>
+    </Resource>
+    <Resource Include="..\..\data\Drawables\StartPage_ExitButton.png">
+      <Link>Resources\Drawables\StartPage_ExitButton.png</Link>
+    </Resource>
+    <Resource Include="..\..\data\Drawables\StartPage_Logo.png">
+      <Link>Resources\Drawables\StartPage_Logo.png</Link>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />

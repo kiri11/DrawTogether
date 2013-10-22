@@ -1,13 +1,11 @@
-﻿<Page
+﻿<Page x:Class="DrawTogether.ViewModel.LevelsPageViewModel"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:ARP="clr-namespace:DrawTogether"
-      xmlns:ee="http://schemas.microsoft.com/expression/2010/effects" x:Class="DrawTogether.ViewModel.LevelsPageViewModel"
+      xmlns:ee="http://schemas.microsoft.com/expression/2010/effects"
       mc:Ignorable="d" 
-	  d:DesignWidth="1920" d:DesignHeight="1080" 
-	Title="LevelsPageView">
+	  d:DesignWidth="1920" d:DesignHeight="1080">
 	
 	<Viewbox MinWidth="800" MinHeight="480" ScrollViewer.VerticalScrollBarVisibility="Disabled" Grid.IsSharedSizeScope="True">
 		<Grid Background="#FF007985" Width="1920" Height="1080">

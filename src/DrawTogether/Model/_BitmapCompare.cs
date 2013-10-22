@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace DrawTogether.Model
 {
-    public class BitmapCompare
+    public class _BitmapCompare
     {
-        public static double GetBitmapsSimilarityRatio(Bitmap first, Bitmap second)
+        public double GetBitmapsSimilarityRatio(Bitmap first, Bitmap second)
         {
             int DiferentPixels = 0;
             Bitmap container = new Bitmap(first.Width, first.Height);
